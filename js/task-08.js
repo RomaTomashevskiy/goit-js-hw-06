@@ -12,26 +12,20 @@ form.addEventListener('submit', fnA);
 
 function fnA(eventy) {
     eventy.preventDefault();
-    if (inputEmail.value === '') {
-        alert('Enter your email')
+    if (inputEmail.value === '' || inputPassword.value === '') {
+        alert('все поля должны быть заполнены')
     };
-    if (inputPassword.value === '') {
-        alert('Enter your password')
-    };
-
-
-    
-    // const formData = new FormData(eventy.currentTarget);
-
-    // formData.forEach((a, b) => {
-    //     console.log()
-    // })
-    
-
-    // console.log(inputEmail.value)
-    // console.log(inputPassword.value)
-     form.reset()
+    const userEmail = event.currentTarget.elements.email.value;
+    const userPass = event.currentTarget.elements.password.value;
+    const userData = {
+    userEmail,
+    userPass,
+  };
+    form.reset()
+    console.log(userData)
 };
+
+
 
 
 
@@ -40,5 +34,5 @@ function fnA(eventy) {
 // При отправке формы страница не должна перезагружаться.✅
 // Если в форме есть незаполненные поля, выводи alert с предупреждением о том, что все поля должны быть заполнены.✅
 // Если пользователь заполнил все поля и отправил форму, собери значения полей в обьект, где имя поля будет именем свойства, 
-// а значение поля - значением свойства.Для доступа к элементам формы используй свойство elements.
+// а значение поля - значением свойства.Для доступа к элементам формы используй свойство elements.✅
 // Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.✅
