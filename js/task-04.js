@@ -16,40 +16,18 @@ const counterValue = {
     },
 };
 
-const  targetButtonClickHandleDoDecrement = () => {
+
+decrementEl.addEventListener('click', function () {
+    counterValue.decrement();
     valueEl.textContent = counterValue.value
-    counterValue.decrement()
-};
+});
 
-const  targetButtonClickHandleDoIncrement = () => {
+
+
+
+incrementEl.addEventListener('click', function () {
+    counterValue.increment();
     valueEl.textContent = counterValue.value
-    counterValue.increment()
-};
-
-
-decrementEl.addEventListener('click', targetButtonClickHandleDoDecrement);
-incrementEl.addEventListener('click', targetButtonClickHandleDoIncrement); 
-
-
-
-
-
-// decrementEl.addEventListener('click', () => {
-//     valueEl.textContent = counterValue.value
-//     counterValue.decrement()
-// });
-
-
-
-// incrementEl.addEventListener('click', () => {
-//     valueEl.textContent = counterValue.value
-//     counterValue.increment()
-// });
-
-
-
-
-
-
+});
 
 
